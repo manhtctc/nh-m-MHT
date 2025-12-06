@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NETPHIM - Xem Phim HD Miễn Phí</title>
+
+    <!-- SỬA LỖI: Font Awesome + Google Font -->
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="background"></div>
+
+    <!-- Trang chủ -->
+    <div id="mainPage" class="page active">
+      <div class="content">
+        <header>
+          <div class="container">
+            <h1 class="logo">NETPHIM</h1>
+            <nav>
+              <a href="#" class="nav-link active">Trang chủ</a>
+              <a href="#">Phim lẻ</a>
+              <a href="#">Phim bộ</a>
+              <div class="genre-dropdown">
+                <div class="genre-menu">
+                  <a href="#" class="genre-item active" data-genre="all"
+                    >Tất cả phim</a
+                  >
+                  <a href="#" class="genre-item" data-genre="action"
+                    >Hành Động</a
+                  >
+                  <a href="#" class="genre-item" data-genre="romance"
+                    >Tình Cảm</a
+                  >
+                  <a href="#" class="genre-item" data-genre="horror">Kinh Dị</a>
+                  <a href="#" class="genre-item" data-genre="animation"
+                    >Hoạt Hình</a
+                  >
+                  <a href="#" class="genre-item" data-genre="scifi"
+                    >Khoa Học Viễn Tưởng</a
+                  >
+                </div>
+              </div>
+            </nav>
+            <div class="search-box">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Tìm kiếm phim..."
+              />
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </header>
+
+        <div class="carousel-section">
+          <div class="carousel-wrapper">
+            HTML<button class="carousel-btn prev" aria-label="Phim trước">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" aria-label="Phim tiếp">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel-track" id="carouselTrack"></div>
+            <div class="carousel-dots" id="carouselDots"></div>
+          </div>
+        </div>
+
+        <main class="container">
+          <section class="section">
+            <h2 id="sectionTitle" class="section-title">Phim Đang Hot</h2>
+            <div class="movies-grid" id="hotMovies"></div>
+          </section>
+          <section class="section">
+            <h2 id="newMoviesTitle" class="section-title">Phim Mới Nhất</h2>
+            <div class="movies-grid" id="newMovies"></div>
+          </section>
+          <section class="movie-section">
+            <h2 class="section-title">Phim Việt Nam</h2>
+            <div id="vnMovies" class="movies-grid"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Trang xem phim -->
+    <div id="watchPage" class="page">
+      <div class="watch-header">
+        <button id="backBtn" class="back-btn">Quay lại</button>
+        <h2 id="watchTitle"></h2>
+      </div>
+      <div class="video-wrapper">
+        <div class="video-container">
+          <iframe
+            id="watchFrame"
+            src=""
+            allowfullscreen
+            allow="autoplay"
+          ></iframe>
+        </div>
+      </div>
+      <div class="movie-details">
+        <h3 id="detailTitle"></h3>
+        <p>
+          <strong>Năm:</strong> <span id="detailYear"></span> |
+          <strong>Điểm:</strong> <span id="detailRating"></span>/10
+        </p>
+        <p id="detailDesc"></p>
+      </div>
+    </div>
+
+    <!-- FOOTER ĐEN ĐẬM KÉO NGANG TOÀN MÀN HÌNH - SIÊU ĐẸP -->
+    <footer class="full-black-footer">
+      <div class="container">
+        <!-- Thanh icon viên thuốc -->
+        <div class="social-pills-bar">
+          <ul class="social-pills">
+            <li class="pill-item">
+              <a
+                href="https://facebook.com/netphim"
+                target="_blank"
+                data-social="facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <span class="pill-tooltip">Facebook</span>
+            </li>
+            <li class="pill-item">
+              <a
+                href="https://zalo.me/0123456789"
+                target="_blank"
+                data-social="zalo"
+                ><i class="fas fa-comment-dots"></i
+              ></a>
+              <span class="pill-tooltip">Zalo</span>
+            </li>
+            <li class="pill-item">
+              <a
+                href="https://t.me/netphim"
+                target="_blank"
+                data-social="telegram"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+              <span class="pill-tooltip">Telegram</span>
+            </li>
+            <li class="pill-item">
+              <a
+                href="https://youtube.com/@netphim"
+                target="_blank"
+                data-social="youtube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <span class="pill-tooltip">YouTube</span>
+            </li>
+            <li class="pill-item">
+              <a
+                href="https://tiktok.com/@netphim"
+                target="_blank"
+                data-social="tiktok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <span class="pill-tooltip">TikTok</span>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          © 2025 NETPHIM - Xem phim HD Vietsub miễn phí tốc độ cao
+        </div>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
